@@ -1,0 +1,68 @@
+--------------------------------------------------------------------------
+pyclamav - a quick hack to use libclamav with python
+author : Alexandre Norman <norman AT xael.org> - 2005
+--------------------------------------------------------------------------
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+--------------------------------------------------------------------------
+
+CHANGELOG
+=========
+
+version 0.4.1 :
+- support for clamav v0.93
+
+version 0.4.0 :
+- support for clamav v0.90
+- due to removal of cl_scanbuff in libclamav, pyclamav.scanthis() had
+to be removed
+- using of pyclamd instead of pyclamav is strongly encouraged
+(see http://xael.org/norman/python/pyclamd/)
+
+version 0.3.3 :
+- add python exception when an error occurs with the virus database
+- add /usr/local/lib path to setup to avoid stupid compilation path errors
+
+version 0.3.2 :
+- corrected OpenBSD 3.8 compilation error (as stat64 is not defined on openbsd)
+
+version 0.3.1 :
+- Corrected some compilation warning within pyclamav.c (patch by Cedric Delfosse)
+
+version 0.3.0 :
+- now pyclamav raise exceptions when something wrong occurs !
+- when scanfile is used with a directory given as an argument, 
+  a ValueError exception is raised. Previously, it was returning "(0,'')"
+- doctrings are now working... print pyclamav.__doc__, pyclamav.scanfile.__doc__
+- bug correction in "pyclamav.get_version", now returns daily date and version
+- Tested with clamav 0.86.1
+
+version 0.2.2 :
+- adding get_version method to get the version of libclamav
+(patch from Cyril Lacoux)
+
+version 0.2.1 :
+- supports both libclamav 0.80 and 0.75
+- supports python prior to 2.3
+
+version 0.2.0 :
+- now support libclamav version 0.80 (change in some functions from libclamav)
+- adding function "pyclamav.get_numsig" to get the number of known signatures
+- adding exception raising in python and error handling
+- automagically reloading of the virus database if it has changed
+
+version 0.1.1 : 
+- adding function "pyclamav.scanthis" in order to scan a given buffer
+
+version 0.1 : Initial release
