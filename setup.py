@@ -3,25 +3,25 @@ from distutils.core import setup, Extension
 
 pyclamav = Extension('pyclamav',
                     sources = ['pyclamav.c'], 
-		    libraries = ['clamav'],
-		    library_dirs=['/usr/local/lib'])
+		    libraries = ['libclamav', 'python27'],
+		    library_dirs=['.'])
 
 # Build : python setup.py build
 # Install : python setup.py install
 # Register : python setup.py register
 
 #  platform = 'Unix',
-#  download_url = 'http://xael.org/norman/python/pyclamav/',
+#  download_url = 'https://github.com/donfucius/pyclamav/tree/mypyclamav',
 
 
 setup (name = 'pyclamav',
-       version = '0.4.1',
-       author = 'Alexandre Norman',
-       author_email = 'norman()xael.org',
+       version = '0.0.1',
+       author = 'Rocky Dong',
+       author_email = '',
        license ='GPL',
        keywords="python, clamav, antivirus, scanner, virus, libclamav",
-       url = 'http://xael.org/norman/python/pyclamav/',
-       include_dirs = ['/usr/local/include'],
-       description = 'This is a python binding to the C libclamav library (from the Clamav project - http://www.clamav.net). It can be used to easily allow a Python script to scan a file or a buffer against known viruses.',
-       long_description = 'This is a python binding to the C libclamav library (from the Clamav project - http://www.clamav.net). It can be used to easily allow a Python script to scan a file or a buffer against known viruses.',
+       url = 'https://github.com/donfucius/pyclamav/tree/mypyclamav',
+       include_dirs = ['.'],
+       description = 'This is a python binding to the C libclamav library (from the Clamav project - http://www.clamav.net) based on http://xael.org/norman/python/pyclamav/. It can be used to easily allow a Python script to scan a file against known viruses.',
+       long_description = 'This is a python binding to the C libclamav library (from the Clamav project - http://www.clamav.net) based on http://xael.org/norman/python/pyclamav/. It can be used to easily allow a Python script to scan a file against known viruses.',
        ext_modules = [pyclamav])
