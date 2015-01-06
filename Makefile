@@ -1,6 +1,6 @@
 # Get version number
 VERSION=`python setup.py --version`
-FILES=CHANGELOG Makefile pyclamav.c setup.py README.txt gpl.txt example.py
+FILES=Makefile pyclamav.c setup.py README.md gpl.txt
 ARCHIVE=`python setup.py --fullname`
 
 #LIBS=`clamav-config --libs`
